@@ -18,7 +18,7 @@ void merge2(int input1, int input2, int output) {
     bytesRead2 = read(input2, buffer2, sizeof(buffer2));
 
     while (bytesRead1 > 0 && bytesRead2 > 0) {
-        // Comparação dos registros como strings
+        // Comparação dos registos como strings
         int cmp = strcmp(buffer1, buffer2);
 
         if (cmp < 0) {
@@ -30,7 +30,7 @@ void merge2(int input1, int input2, int output) {
         }
     }
 
-    // Escrever o restante dos registros
+    // Escrever o restante dos registos
     while (bytesRead1 > 0) {
         write(output, buffer1, bytesRead1);
         bytesRead1 = read(input1, buffer1, sizeof(buffer1));

@@ -4,7 +4,7 @@
 #include <string.h>
 
 void merge2(int fi1, int fi2, int fo) {
-    char buffer1[17]; // Tamanho máximo do registro (ajuste conforme necessário)
+    char buffer1[17]; // Tamanho máximo do registo (ajuste conforme necessário)
     char buffer2[17];
     
     ssize_t bytesRead1, bytesRead2;
@@ -13,7 +13,7 @@ void merge2(int fi1, int fi2, int fo) {
     bytesRead2 = read(fi2, buffer2, sizeof(buffer2));
 
     while (bytesRead1 > 0 && bytesRead2 > 0) {
-        // Comparação dos registros como strings
+        // Comparação dos registos como strings
         int cmp = strcmp(buffer1, buffer2);
 
         if (cmp < 0) {
@@ -25,7 +25,7 @@ void merge2(int fi1, int fi2, int fo) {
         }
     }
 
-    // Escrever o restante dos registros
+    // Escrever o restante dos registos
     while (bytesRead1 > 0) {
         write(fo, buffer1, bytesRead1);
         bytesRead1 = read(fi1, buffer1, sizeof(buffer1));
